@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure Your Bot - BotMaker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+    </a>
+
+    <main class="order-page">
+        <div class="order-header">
+            <div class="secret-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                Exclusive Access
+            </div>
+            <h1>Bot <span class="gradient-text">Configuration</span> Studio</h1>
+            <p>Craft your perfect Discord bot with our advanced customization options</p>
+        </div>
+
+        <div class="order-container">
+            <!-- Step Indicator -->
+            <div class="steps-indicator">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>Bot Type</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>Features</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>Add-ons</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <span>Confirm</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Bot Type -->
+            <div class="step-content active" id="step1">
+                <h2>Select Your Bot Type</h2>
+                <p class="step-desc">Choose a preset plan or build a custom bot</p>
+                
+                <!-- Preset Plans -->
+                <h3 class="section-title">⚡ Quick Preset Plans</h3>
+                <div class="preset-plans-grid">
+                    <div class="preset-plan-card" data-type="starter-plan" data-price="15">
+                        <div class="plan-badge">Starter</div>
+                        <h3>Starter Bot</h3>
+                        <p class="plan-interactions">Up to 1,000 interactions/month</p>
+                        <div class="plan-price">€15 <span>+ €5/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Custom commands</li>
+                            <li>Basic moderation</li>
+                            <li>Simple database</li>
+                            <li>Basic logging</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="preset-plan-card popular" data-type="growth-plan" data-price="35">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="plan-badge">Growth</div>
+                        <h3>Growth Bot</h3>
+                        <p class="plan-interactions">Up to 10,000 interactions/month</p>
+                        <div class="plan-price">€35 <span>+ €10/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter</li>
+                            <li>Advanced moderation</li>
+                            <li>Reaction roles</li>
+                            <li>Welcome system</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="preset-plan-card" data-type="pro-plan" data-price="80">
+                        <div class="plan-badge">Pro</div>
+                        <h3>Pro Bot</h3>
+                        <p class="plan-interactions">Up to 50,000 interactions/month</p>
+                        <div class="plan-price">€80 <span>+ €20/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth</li>
+                            <li>Ticket system</li>
+                            <li>Economy/leveling</li>
+                            <li>API integrations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Divider -->
+                <div class="or-divider">
+                    <span>OR BUILD CUSTOM</span>
+                </div>
+                
+                <!-- Custom Bot Types -->
+                <h3 class="section-title">🛠️ Custom Bot Types</h3>
+                <div class="bot-types-grid">
+                    <div class="bot-type-card" data-type="moderation">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Moderation Bot</h3>
+                        <p>Auto-mod, warnings, bans, mutes, logging</p>
+                        <span class="type-price">From €25</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="music">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="5.5" cy="17.5" r="2.5"/>
+                                <circle cx="17.5" cy="15.5" r="2.5"/>
+                                <path d="M8 17V5l12-2v12"/>
+                            </svg>
+                        </div>
+                        <h3>Music Bot</h3>
+                        <p>YouTube, Spotify, queues, playlists</p>
+                        <span class="type-price">From €35</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="economy">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v12M9 9h6M9 15h6"/>
+                            </svg>
+                        </div>
+                        <h3>Economy Bot</h3>
+                        <p>Currency, shops, gambling, leaderboards</p>
+                        <span class="type-price">From €45</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="leveling">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <h3>Leveling Bot</h3>
+                        <p>XP system, ranks, role rewards, cards</p>
+                        <span class="type-price">From €30</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="ticket">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                        </div>
+                        <h3>Ticket Bot</h3>
+                        <p>Support tickets, transcripts, categories</p>
+                        <span class="type-price">From €25</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="multipurpose">
+                        <div class="type-icon rainbow-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <h3>Multipurpose Bot</h3>
+                        <p>All-in-one solution with everything</p>
+                        <span class="type-price popular">From €80</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="giveaway">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                            </svg>
+                        </div>
+                        <h3>Giveaway Bot</h3>
+                        <p>Giveaways, drops, requirements</p>
+                        <span class="type-price">From €20</span>
+                    </div>
+                    
+                    <div class="bot-type-card" data-type="custom">
+                        <div class="type-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <h3>Custom Bot</h3>
+                        <p>Build from scratch - your vision</p>
+                        <span class="type-price">Quote</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Features -->
+            <div class="step-content" id="step2">
+                <h2>Select Features</h2>
+                <p class="step-desc">Choose the features you want included</p>
+                
+                <div class="features-container">
+                    <div class="feature-category">
+                        <div class="category-header">
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                Moderation
+                            </h3>
+                            <button type="button" class="select-all-btn">Select All</button>
+                        </div>
+                        <div class="feature-options">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="automod" data-price="10">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Auto Moderation</span>
+                                <span class="feature-price">+€10</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="warnings" data-price="8">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Warning System</span>
+                                <span class="feature-price">+€8</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="logging" data-price="12">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Advanced Logging</span>
+                                <span class="feature-price">+€12</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="antiraid" data-price="15">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Anti-Raid Protection</span>
+                                <span class="feature-price">+€15</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <div class="category-header">
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                Engagement
+                            </h3>
+                            <button type="button" class="select-all-btn">Select All</button>
+                        </div>
+                        <div class="feature-options">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="welcome" data-price="8">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Welcome Messages</span>
+                                <span class="feature-price">+€8</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="levels" data-price="15">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Leveling System</span>
+                                <span class="feature-price">+€15</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="reactions" data-price="10">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Reaction Roles</span>
+                                <span class="feature-price">+€10</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="giveaways" data-price="12">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Giveaway System</span>
+                                <span class="feature-price">+€12</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <div class="category-header">
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v12M9 9h6M9 15h6"/>
+                                </svg>
+                                Economy
+                            </h3>
+                            <button type="button" class="select-all-btn">Select All</button>
+                        </div>
+                        <div class="feature-options">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="currency" data-price="20">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Currency System</span>
+                                <span class="feature-price">+€20</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="shop" data-price="15">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Custom Shop</span>
+                                <span class="feature-price">+€15</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="gambling" data-price="18">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Gambling Games</span>
+                                <span class="feature-price">+€18</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="inventory" data-price="12">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Inventory System</span>
+                                <span class="feature-price">+€12</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <div class="category-header">
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                Tickets & Support
+                            </h3>
+                            <button type="button" class="select-all-btn">Select All</button>
+                        </div>
+                        <div class="feature-options">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="tickets" data-price="15">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Ticket System</span>
+                                <span class="feature-price">+€15</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="transcripts" data-price="8">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Ticket Transcripts</span>
+                                <span class="feature-price">+€8</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="feedback" data-price="10">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Feedback System</span>
+                                <span class="feature-price">+€10</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <div class="category-header">
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="5.5" cy="17.5" r="2.5"/>
+                                    <circle cx="17.5" cy="15.5" r="2.5"/>
+                                    <path d="M8 17V5l12-2v12"/>
+                                </svg>
+                                Entertainment
+                            </h3>
+                            <button type="button" class="select-all-btn">Select All</button>
+                        </div>
+                        <div class="feature-options">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="music" data-price="25">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Music Player</span>
+                                <span class="feature-price">+€25</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="games" data-price="15">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Mini Games</span>
+                                <span class="feature-price">+€15</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="memes" data-price="8">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Meme Commands</span>
+                                <span class="feature-price">+€8</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-category">
+                        <div class="category-header">
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="21" x2="9" y2="9"/>
+                                </svg>
+                                Utilities
+                            </h3>
+                            <button type="button" class="select-all-btn">Select All</button>
+                        </div>
+                        <div class="feature-options">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="embeds" data-price="10">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Custom Embeds</span>
+                                <span class="feature-price">+€10</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="reminders" data-price="8">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Reminders</span>
+                                <span class="feature-price">+€8</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="polls" data-price="8">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">Poll System</span>
+                                <span class="feature-price">+€8</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="feature" value="afk" data-price="5">
+                                <span class="checkmark"></span>
+                                <span class="feature-name">AFK System</span>
+                                <span class="feature-price">+€5</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Add-ons -->
+            <div class="step-content" id="step3">
+                <h2>Premium Add-ons</h2>
+                <p class="step-desc">Enhance your bot with premium features</p>
+                
+                <div class="addons-grid">
+                    <div class="addon-card" data-addon="dashboard" data-price="50">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <h3>Web Dashboard</h3>
+                            <p>Control your bot from a beautiful web interface</p>
+                        </div>
+                        <span class="addon-price">+€50</span>
+                        <div class="addon-check"></div>
+                    </div>
+                    
+                    <div class="addon-card" data-addon="api" data-price="35">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <h3>Custom API</h3>
+                            <p>REST API for external integrations</p>
+                        </div>
+                        <span class="addon-price">+€35</span>
+                        <div class="addon-check"></div>
+                    </div>
+                    
+                    <div class="addon-card" data-addon="hosting" data-price="10">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                <line x1="6" y1="18" x2="6.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <h3>24/7 Hosting</h3>
+                            <p>We host your bot with 99.9% uptime</p>
+                        </div>
+                        <span class="addon-price">+€10/mo</span>
+                        <div class="addon-check"></div>
+                    </div>
+                    
+                    <div class="addon-card" data-addon="priority" data-price="25">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <h3>Priority Development</h3>
+                            <p>Get your bot delivered 2x faster</p>
+                        </div>
+                        <span class="addon-price">+€25</span>
+                        <div class="addon-check"></div>
+                    </div>
+                    
+                    <div class="addon-card" data-addon="source" data-price="40">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <h3>Source Code</h3>
+                            <p>Full ownership of your bot's code</p>
+                        </div>
+                        <span class="addon-price">+€40</span>
+                        <div class="addon-check"></div>
+                    </div>
+                    
+                    <div class="addon-card" data-addon="support" data-price="15">
+                        <div class="addon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                        </div>
+                        <div class="addon-info">
+                            <h3>Extended Support</h3>
+                            <p>3 months of priority support</p>
+                        </div>
+                        <span class="addon-price">+€15</span>
+                        <div class="addon-check"></div>
+                    </div>
+                </div>
+                
+                <div class="special-requests">
+                    <h3>Special Requests</h3>
+                    <textarea id="specialRequests" placeholder="Describe any additional features or customizations you'd like..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 4: Confirm -->
+            <div class="step-content" id="step4">
+                <h2>Confirm Your Order</h2>
+                <p class="step-desc">Review your configuration and submit</p>
+                
+                <div class="order-summary">
+                    <div class="summary-section">
+                        <h3>Bot Type</h3>
+                        <p id="summaryBotType">-</p>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <h3>Selected Features</h3>
+                        <ul id="summaryFeatures">
+                            <li>-</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <h3>Add-ons</h3>
+                        <ul id="summaryAddons">
+                            <li>-</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Estimated Total:</span>
+                        <span id="summaryTotal" class="total-price">€0</span>
+                    </div>
+                </div>
+                
+                <div class="confirm-form">
+                    <h3>Your Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="discordUser">Discord Username *</label>
+                            <input type="text" id="discordUser" placeholder="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="discordId">Discord User ID *</label>
+                            <input type="text" id="discordId" placeholder="123456789012345678" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serverInvite">Server Invite Link *</label>
+                        <input type="text" id="serverInvite" placeholder="https://discord.gg/..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Willing to voice call to discuss?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="vcWilling" value="yes">
+                                <span class="radio-mark"></span>
+                                Yes
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="vcWilling" value="no" checked>
+                                <span class="radio-mark"></span>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <label class="age-confirm">
+                        <input type="checkbox" id="ageCheck" required>
+                        <span class="check-mark"></span>
+                        I confirm I am <strong>17 years or older</strong>
+                    </label>
+                    
+                    <button type="button" id="submitOrder" class="submit-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                        Submit Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="step-navigation">
+                <button id="prevBtn" class="nav-btn prev" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Previous
+                </button>
+                <button id="nextBtn" class="nav-btn next">
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Live Price Calculator -->
+        <div class="price-calculator">
+            <div class="calc-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                    <line x1="8" y1="6" x2="16" y2="6"/>
+                    <line x1="8" y1="10" x2="16" y2="10"/>
+                    <line x1="8" y1="14" x2="12" y2="14"/>
+                </svg>
+                Price Calculator
+            </div>
+            <div class="calc-items" id="calcItems">
+                <div class="calc-item">
+                    <span>Base Price</span>
+                    <span id="basePrice">€0</span>
+                </div>
+            </div>
+            <div class="calc-total">
+                <span>Total</span>
+                <span id="totalPrice">€0</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="order.js"></script>
+</body>
+</html>
